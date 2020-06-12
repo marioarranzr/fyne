@@ -252,7 +252,6 @@ func (f *fileDialog) setSelected(file *fileDialogItem) {
 	}
 	if file != nil && file.isDirectory() {
 		f.setDirectory(file.path)
-		return
 	}
 	f.selected = file
 
