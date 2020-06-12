@@ -159,7 +159,11 @@ func (f *fileDialog) makeUI() fyne.CanvasObject {
 
 func (f *fileDialog) loadFavorites() []fyne.CanvasObject {
 	home, _ := os.UserHomeDir()
+	current, _ := os.Getwd()
 	places := []fyne.CanvasObject{
+		widget.NewButton("Working dir", func() {
+			f.setDirectory(current)
+		}),
 		widget.NewButton("Home", func() {
 			f.setDirectory(home)
 		}),
